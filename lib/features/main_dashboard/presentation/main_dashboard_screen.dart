@@ -7,7 +7,6 @@ import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
 import 'package:flutter_posui_pocket/ui/components/cards/aplazo_agent_progress_card.dart';
 import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/shortcuts.dart';
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="aplazo_color">#64E9F7</color>
+
+    <!-- Incode Button Primary -->
+    <color name="onboard_sdk_btn_primary_background_color">#000000</color>
+    <color name="onboard_sdk_btn_primary_border_color">#000000</color>
+
+    <!-- Incode Primary Pressed -->
+    <color name="onboard_sdk_btn_primary_background_color_pressed">#575962</color>
+    <color name="onboard_sdk_btn_primary_border_color_pressed">#000000</color>
+
+    <!-- Incode Primary Disabled -->
+    <color name="onboard_sdk_btn_primary_background_color_disabled">#DFDFE0</color>
+    <color name="onboard_sdk_btn_primary_border_color_disabled">#BFC0C2</color>
+</resources>

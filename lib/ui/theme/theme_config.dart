@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
+import 'package:flutter_posui_pocket/ui/components/texts/texts.dart';
 
 class AppTheme {
   static const Color primaryColor = Colors.black;
@@ -76,6 +75,7 @@ class AppTheme {
   static const double size24 = 24;
   static const double size16 = 16;
   static const double size32 = 32;
+  static const double size40 = 40;
 
   // common images
   static const String whatsappIcon = "assets/images/common_use/whatsapp.png";
@@ -94,6 +94,18 @@ class AppTheme {
     dialogTheme: DialogTheme(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
     ),
+    cardTheme: const CardTheme(
+      color: Colors.white,
+      surfaceTintColor: Colors.white,
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.white,
+        modalBackgroundColor: Colors.white),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white),
     datePickerTheme: DatePickerThemeData(
       headerBackgroundColor: AppTheme.highColor,
       headerForegroundColor: AppTheme.primaryColor,

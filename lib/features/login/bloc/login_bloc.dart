@@ -27,9 +27,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       if (event is UserLoginEvent) {
         emit(LoginLoading());
         try {
-          final result = await repository.login(
-              /*event.user*/ 'gerardo@aplazo.mx',
-              /*event.password*/ 'Aplazo@12345');
+          final result = await repository.login(event.user, event.password);
           prefs.setString(PreferencesKeys.tokenKey, result);
           emit(UserLogged());
         } on DioException {

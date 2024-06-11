@@ -66,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               hintText: 'Usuario',
                               label: 'Ingresa tu usuario',
                               textFieldType: TextFieldType.email),
-                          onChanged: (text) {},
+                          onChanged: (text) {
+                            BlocProvider.of<LoginBloc>(context);
+                          },
                           controller: emailController),
                       const SizedBox(
                         height: 8,
@@ -89,7 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 isPassword: true,
                                 label: 'Ingresa tu contraseña',
                                 textFieldType: TextFieldType.normal),
-                            onChanged: (text) {},
+                            onChanged: (text) {
+                              BlocProvider.of<LoginBloc>(context);
+                            },
                             controller: passwordController);
                       }),
                       const SizedBox(

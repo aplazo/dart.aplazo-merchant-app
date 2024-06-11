@@ -10,7 +10,7 @@ class AplazoAgentProgressCard extends StatelessWidget {
       margin: const EdgeInsets.all(20.0),
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
-        color: const Color(0xFF5FC7A4),
+        color: Color.fromARGB(255, 0, 0, 0),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
@@ -29,46 +29,44 @@ class AplazoAgentProgressCard extends StatelessWidget {
                     AplazoText(
                         textProps: TextProps(
                             multiAligment: TextAlign.left,
-                            text: 'Eres el número 1 vendiendo con Aplazo en tu tienda',
+                            text: 'Resumen de Hoy',
                             type: TextType.headlineSize18Weight600White)),
                     const SizedBox(
                       height: 14,
-                    ),
-                    AplazoText(
-                        textProps: TextProps(
-                            multiAligment: TextAlign.left,
-                            text: 'Has vendido 47% más en Aplazo que el resto de los vendedores de tu tienda.',
-                            type: TextType.headlineSize16Weight400White)),
+                    )
                   ],
                 ),
-              ),
-              const SizedBox(width: 10.0),
-              // Agrega un espacio entre el texto y la imagen
-              Image.asset(
-                'assets/images/badge1.png',
-                // Reemplaza con la ruta de tu imagen
-                width: 150.0,
-                height: 150.0,
-                fit: BoxFit.contain,
-              ),
+              )
             ],
           ),
           const SizedBox(height: 14.0),
-          LinearProgressIndicator(
-            backgroundColor: const Color.fromRGBO(255, 255, 255, 0.32),
-            minHeight: 10,
-            value: 0.6,
-            borderRadius: BorderRadius.circular(10.0),
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
-          ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             AplazoText(
                 textProps: TextProps(
-                    text: 'Nivel verde',
+                    text: 'Total de Ventas',
                     type: TextType.headlineSize16Weight400White)),
             AplazoText(
                 textProps: TextProps(
-                    text: 'Nivel aqua',
+                    text: '\$1,476.00',
+                    type: TextType.headlineSize16Weight400White)),
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            AplazoText(
+                textProps: TextProps(
+                    text: 'Número de pedidos',
+                    type: TextType.headlineSize16Weight400White)),
+            AplazoText(
+                textProps: TextProps(
+                    text: '2', type: TextType.headlineSize16Weight400White)),
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            AplazoText(
+                textProps: TextProps(
+                    text: 'Ticket Promedio',
+                    type: TextType.headlineSize16Weight400White)),
+            AplazoText(
+                textProps: TextProps(
+                    text: '\$1250.00',
                     type: TextType.headlineSize16Weight400White)),
           ])
         ],

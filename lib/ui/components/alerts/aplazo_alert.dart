@@ -4,8 +4,7 @@ import '../buttons/aplazo_button.dart';
 import '../texts/aplazo_text.dart';
 
 class AplazoAlert extends StatelessWidget {
-  const AplazoAlert({Key? key, required this.alert, this.forceAlign = false})
-      : super(key: key);
+  const AplazoAlert({super.key, required this.alert, this.forceAlign = false});
   final AlertProps alert;
   final bool forceAlign;
   @override

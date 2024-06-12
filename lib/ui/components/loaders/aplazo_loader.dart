@@ -5,8 +5,7 @@ import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 import 'dart:async';
 
 class AplazoLoader extends StatefulWidget {
-  const AplazoLoader({Key? key, this.type = AplazoLoaderType.normal})
-      : super(key: key);
+  const AplazoLoader({super.key, this.type = AplazoLoaderType.normal});
 
   //bool isLoading;
   final AplazoLoaderType type;

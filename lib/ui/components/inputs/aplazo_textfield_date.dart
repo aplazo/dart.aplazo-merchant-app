@@ -52,9 +52,9 @@ class AplazoTextFieldDate extends StatelessWidget {
 
 ButtonStyle _getButtonStyle() {
   return ButtonStyle(
-    foregroundColor: MaterialStateProperty.all<Color>(AppTheme.primaryColor),
-    backgroundColor: MaterialStateProperty.all<Color>(AppTheme.secondaryColor),
-    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+    foregroundColor: WidgetStateProperty.all<Color>(AppTheme.primaryColor),
+    backgroundColor: WidgetStateProperty.all<Color>(AppTheme.secondaryColor),
+    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
             side: const BorderSide(color: AppTheme.borderColor))),

@@ -122,7 +122,7 @@ class AppTheme {
         fontFamily: TextType.text.fontFamily,
       ),
       dayOverlayColor:
-          MaterialStateProperty.resolveWith((states) => AppTheme.highColor),
+          WidgetStateProperty.resolveWith((states) => AppTheme.highColor),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       yearStyle: TextStyle(
         color: TextType.text.color,
@@ -131,7 +131,7 @@ class AppTheme {
         fontFamily: TextType.text.fontFamily,
       ),
       yearOverlayColor:
-          MaterialStateProperty.resolveWith((states) => AppTheme.primaryColor),
+          WidgetStateProperty.resolveWith((states) => AppTheme.primaryColor),
       weekdayStyle: TextStyle(
         color: TextType.text.color,
         fontSize: TextType.text.size,

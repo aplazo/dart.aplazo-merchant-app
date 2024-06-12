@@ -3,11 +3,10 @@ import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 
 class AplazoButton extends StatelessWidget {
   const AplazoButton(
-      {Key? key,
+      {super.key,
       required this.buttonProps,
       required this.onPressed,
-      this.isEnable = true})
-      : super(key: key);
+      this.isEnable = true});
   final ButtonProps buttonProps;
   final VoidCallback onPressed;
   final bool isEnable;
@@ -94,11 +93,11 @@ TextStyle _getStyle(Color color, TextDecoration textDecoration, double fontSize,
 ButtonStyle _getButtonStyle(ButtonType button, bool isEnable) {
   if (button == ButtonType.link) {
     return ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-      padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
-      elevation: MaterialStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+      elevation: WidgetStateProperty.all(0),
       alignment: Alignment.centerLeft,
-      minimumSize: MaterialStateProperty.all<Size>(Size.zero),
+      minimumSize: WidgetStateProperty.all<Size>(Size.zero),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     );
   }
@@ -107,15 +106,15 @@ ButtonStyle _getButtonStyle(ButtonType button, bool isEnable) {
     foregroundColor: button.materialTextColor,
     backgroundColor: isEnable
         ? button.materialBackgroundColor
-        : MaterialStateProperty.all<Color>(AppTheme.primaryColor.withAlpha(15)),
-    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        : WidgetStateProperty.all<Color>(AppTheme.primaryColor.withAlpha(15)),
+    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
             side: BorderSide(
                 color: isEnable
                     ? button.borderColor
                     : button.borderColor.withAlpha(52)))),
-    elevation: MaterialStateProperty.all(0),
+    elevation: WidgetStateProperty.all(0),
   );
 }
 
@@ -145,12 +144,12 @@ enum ButtonType {
   final FontWeight fontWeight;
   final TextDecoration textDecoration;
 
-  MaterialStateProperty<Color> get materialBackgroundColor {
-    return MaterialStateProperty.all<Color>(backgroundColor);
+  WidgetStateProperty<Color> get materialBackgroundColor {
+    return WidgetStateProperty.all<Color>(backgroundColor);
   }
 
-  MaterialStateProperty<Color> get materialTextColor {
-    return MaterialStateProperty.all<Color>(textColor);
+  WidgetStateProperty<Color> get materialTextColor {
+    return WidgetStateProperty.all<Color>(textColor);
   }
 }
 

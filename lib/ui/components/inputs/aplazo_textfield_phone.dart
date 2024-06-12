@@ -3,8 +3,7 @@ import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart'
 
 class AplazoTextFieldPhone extends StatelessWidget {
   const AplazoTextFieldPhone(
-      {Key? key, required this.controller, required this.onChanged})
-      : super(key: key);
+      {super.key, required this.controller, required this.onChanged});
 
   final TextEditingController controller;
   final Function onChanged;

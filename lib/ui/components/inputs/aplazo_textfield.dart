@@ -6,13 +6,12 @@ import 'package:masked_text/masked_text.dart';
 
 class AplazoTextField extends StatefulWidget {
   const AplazoTextField(
-      {Key? key,
+      {super.key,
       required this.textFieldProps,
       required this.onChanged,
       required this.controller,
       this.onFocus,
-      this.onFieldSubmitted})
-      : super(key: key);
+      this.onFieldSubmitted});
   final TextFieldProps textFieldProps;
   final TextEditingController controller;
   final Function(String) onChanged;
@@ -115,7 +114,8 @@ class _AplazoTextFieldState extends State<AplazoTextField> {
                   fontWeight: TextType.smallText.fontWeight),
               helperText: widget.textFieldProps.helperText,
               prefixIcon: widget.textFieldProps.textFieldType.customWidget,
-              suffixIcon: widget.textFieldProps.suffixCustomWidget ?? widget.textFieldProps.textFieldType.suffix,
+              suffixIcon: widget.textFieldProps.suffixCustomWidget ??
+                  widget.textFieldProps.textFieldType.suffix,
               disabledBorder:
                   _getOutlineInputBorder(AppTheme.borderColor.withAlpha(150)),
               border: _getOutlineInputBorder(AppTheme.borderColor),
@@ -173,7 +173,8 @@ enum TextFieldType {
       this.isCvv = false,
       this.maxLength,
       this.suffixIcon,
-      this.mask});
+      // ignore: unused_element
+      this.mask = ''});
 
   final TextInputType textInputType;
   final String regex;

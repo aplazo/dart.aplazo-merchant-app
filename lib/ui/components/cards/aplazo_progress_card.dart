@@ -5,8 +5,7 @@ import '../../theme/theme_config.dart';
 
 class AplazoProgressCard extends StatelessWidget {
   const AplazoProgressCard(
-      {Key? key, required this.progressCard, required this.onTapCreditCard})
-      : super(key: key);
+      {super.key, required this.progressCard, required this.onTapCreditCard});
   final ProgressCardProps progressCard;
   final Function() onTapCreditCard;
 

@@ -10,7 +10,7 @@ class AplazoAgentProgressCard extends StatelessWidget {
       margin: const EdgeInsets.all(20.0),
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 0, 0, 0),
+        color: const Color.fromARGB(255, 0, 0, 0),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(

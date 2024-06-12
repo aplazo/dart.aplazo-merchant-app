@@ -6,8 +6,7 @@ class AplazoTextButton extends StatelessWidget {
   final Function() onPressButton;
 
   const AplazoTextButton(
-      {Key? key, required this.textButtonProps, required this.onPressButton})
-      : super(key: key);
+      {super.key, required this.textButtonProps, required this.onPressButton});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,9 @@ class AplazoTextButton extends StatelessWidget {
               horizontal: textButtonProps.paddingHorizontal,
               vertical: textButtonProps.paddingVertical),
           child: Row(
-            mainAxisAlignment: textButtonProps.centerInRow ? MainAxisAlignment.center : MainAxisAlignment.start,
+            mainAxisAlignment: textButtonProps.centerInRow
+                ? MainAxisAlignment.center
+                : MainAxisAlignment.start,
             children: [
               TextButton(
                 onPressed: onPressButton,
@@ -31,7 +32,11 @@ class AplazoTextButton extends StatelessWidget {
               ),
               Visibility(
                   visible: textButtonProps.icon != null,
-                  child: textButtonProps.icon ?? const Icon(Icons.error, size: 12.0,))
+                  child: textButtonProps.icon ??
+                      const Icon(
+                        Icons.error,
+                        size: 12.0,
+                      ))
             ],
           )),
     );

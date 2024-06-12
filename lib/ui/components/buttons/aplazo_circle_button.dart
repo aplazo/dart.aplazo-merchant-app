@@ -4,8 +4,7 @@ import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 
 class AplazoCircleButton extends StatelessWidget {
   const AplazoCircleButton(
-      {Key? key, required this.button, required this.onPressButton})
-      : super(key: key);
+      {super.key, required this.button, required this.onPressButton});
   final CircleButtonProps button;
   final Function(String) onPressButton;
   @override
@@ -17,10 +16,10 @@ class AplazoCircleButton extends StatelessWidget {
             onPressButton(button.action);
           },
           style: ButtonStyle(
-            shape: MaterialStateProperty.all(const CircleBorder()),
-            padding: MaterialStateProperty.all(
+            shape: WidgetStateProperty.all(const CircleBorder()),
+            padding: WidgetStateProperty.all(
                 const EdgeInsets.symmetric(horizontal: 8, vertical: 0)),
-            backgroundColor: MaterialStateProperty.all(AppTheme.secondaryColor),
+            backgroundColor: WidgetStateProperty.all(AppTheme.secondaryColor),
           ),
           child: Image.asset(
             button.imageURl,

@@ -6,8 +6,7 @@ class AplazoBottomNavigation extends StatelessWidget {
   final ValueChanged<int> onTap;
 
   const AplazoBottomNavigation(
-      {Key? key, required this.bottomNavigationProps, required this.onTap})
-      : super(key: key);
+      {super.key, required this.bottomNavigationProps, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -100,26 +100,3 @@ extension Launch on BuildContext {
     }
   }
 }
-
-class _URLMerchantDecode {
-  final String name;
-  final String id;
-  const _URLMerchantDecode({required this.name, required this.id});
-}
-
-_URLMerchantDecode _getUrlDecode(String url) {
-  final splitName = url.split("name.");
-  String name = '';
-  String id = '';
-  if (splitName.length > 1) {
-    final splitMerchant = splitName[1].split(".id.");
-    if (splitMerchant.length > 1) {
-      final splitRemove = splitMerchant[1].split('.');
-      if (splitRemove.isNotEmpty) {
-        name = splitMerchant[0].replaceAll('_', ' ');
-        id = splitRemove[0];
-      }
-    }
-  }
-  return _URLMerchantDecode(name: name, id: id);
-}

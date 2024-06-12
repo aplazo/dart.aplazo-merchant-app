@@ -50,12 +50,10 @@ class PanelBody extends StatelessWidget {
                   ),
                 ], color: const Color(0xFF00E6F5)),
                 AplazoDropDown(
-                    optionList: [],
+                    optionList: const [],
                     dropdownValue: 'Todas',
                     label: 'Estatus de orden',
-                    onChange: (String? value) {
-                      print(value);
-                    }),
+                    onChange: (String? value) {}),
                 const OrdersEmptyScreen()
               ]),
             ),

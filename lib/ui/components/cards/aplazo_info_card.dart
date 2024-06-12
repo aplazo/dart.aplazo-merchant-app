@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
 
 class AplazoInfoCard extends StatelessWidget {
-  const AplazoInfoCard({Key? key, required this.infoCard}) : super(key: key);
+  const AplazoInfoCard({super.key, required this.infoCard});
   final InfoCardProps infoCard;
   @override
   Widget build(BuildContext context) {

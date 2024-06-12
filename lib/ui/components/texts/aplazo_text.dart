@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 
 class AplazoText extends StatelessWidget {
-  const AplazoText({Key? key, required this.textProps}) : super(key: key);
+  const AplazoText({super.key, required this.textProps});
   final TextProps textProps;
 
   @override

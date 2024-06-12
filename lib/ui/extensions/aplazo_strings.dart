@@ -45,27 +45,6 @@ extension AplazoString on String {
     }
   }
 
-  String capitalizeAll() {
-    if (isEmpty) {
-      return '';
-    }
-    if (length == 0) {
-      return '';
-    }
-    if (this == 'null') {
-      return '';
-    }
-    String newC = this.trimLeft().trimRight();
-    newC = newC.replaceAll('  ', ' ');
-    final List<String> splitStr = newC.split(' ');
-    for (int i = 0; i < splitStr.length; i++) {
-      final String sub = splitStr[i].substring(1);
-      splitStr[i] = '${splitStr[i][0].toUpperCase()}$sub';
-    }
-    final output = splitStr.join(' ');
-    return output;
-  }
-
   String removeDiacritics() {
     String str = this;
     var withDia =

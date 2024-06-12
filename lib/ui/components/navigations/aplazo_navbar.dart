@@ -5,16 +5,11 @@ import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
 import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 
 class AplazoNavbar extends StatelessWidget implements PreferredSizeWidget {
-  const AplazoNavbar(
-      {Key? key,
-      required this.navbarProps,
-      this.backFuction})
-      : super(key: key);
+  const AplazoNavbar({super.key, required this.navbarProps, this.backFuction});
   final NavbarProps navbarProps;
   final Function? backFuction;
   @override
   Widget build(BuildContext context) {
-
     final double widthSize =
         (navbarProps.iconButton ?? []).isEmpty ? 50.0 : 0.0;
     final int numButtons = navbarProps.iconButton?.length ?? 0;

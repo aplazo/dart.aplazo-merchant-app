@@ -39,6 +39,7 @@ class RegisterRepositoryImpl extends RegisterRepository {
       });
 
       // Segunda petición basada en la respuesta de la primera
+      // ignore: unused_local_variable
       Response response2 = await client.post(
         'https://merchant.aplazo.net/merchant/create-branch',
         data: {

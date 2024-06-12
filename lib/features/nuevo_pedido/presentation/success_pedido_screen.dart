@@ -81,7 +81,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                         Row(
                           children: [
                             const Spacer(),
-                            Container(
+                            SizedBox(
                               height: 200,
                               width: 180,
                               child: Column(
@@ -101,7 +101,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                             const SizedBox(
                               width: 16,
                             ),
-                            Container(
+                            SizedBox(
                               height: 200,
                               width: 180,
                               child: Column(

@@ -190,9 +190,7 @@ class SimpleRegisterView extends StatelessWidget {
                                 hintText: 'Correo',
                                 label: 'Ingresa tu correo',
                                 textFieldType: TextFieldType.email),
-                            onChanged: (text) {
-                              print("asd");
-                            },
+                            onChanged: (text) {},
                             controller: emailController),
                         const SizedBox(
                           height: 8,

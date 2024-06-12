@@ -36,7 +36,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                   navbarProps: NavbarProps(title: 'Pedido nuevo'),
                   backFuction: () {
                     context.materialPushAndRemoveUntil(
-                        screen: MainDashboardScreen());
+                        screen: const MainDashboardScreen());
                   },
                 ),
                 body: SafeArea(
@@ -45,14 +45,14 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                     Expanded(
                         child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 32,
                         ),
                         AplazoText(
                             textProps: TextProps(
                                 text: 'Escanea el QR',
                                 type: TextType.headlineSize24Weight700)),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         AplazoText(
@@ -60,7 +60,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                                 text:
                                     'Pídele al cliente que escanee el QR con la\napp de aplazo para que pague',
                                 type: TextType.headlineSize14Weight400)),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         Image.memory(
@@ -68,26 +68,26 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                           width: 200,
                           height: 200,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         AplazoText(
                             textProps: TextProps(
                                 text: 'O envíale un link de pago por: ',
                                 type: TextType.headlineSize14Weight400)),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Row(
                           children: [
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               height: 200,
                               width: 180,
                               child: Column(
                                 children: [
-                                  Icon(Icons.whatshot),
-                                  SizedBox(
+                                  const Icon(Icons.whatshot),
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   AplazoText(
@@ -98,7 +98,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 16,
                             ),
                             Container(
@@ -106,8 +106,8 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                               width: 180,
                               child: Column(
                                 children: [
-                                  Icon(Icons.sms),
-                                  SizedBox(
+                                  const Icon(Icons.sms),
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   AplazoText(
@@ -118,12 +118,12 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                                 ],
                               ),
                             ),
-                            Spacer()
+                            const Spacer()
                           ],
                         )
                       ],
                     )),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     AplazoButton(
@@ -134,7 +134,7 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                           context.materialPushAndRemoveUntil(
                               screen: const MainDashboardScreen());
                         }),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     AplazoButton(
@@ -144,14 +144,14 @@ class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
                           context.materialPushAndRemoveUntil(
                               screen: const MainDashboardScreen());
                         }),
-                    SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
                   ],
                 )),
               );
             } else {
-              return AplazoLoader();
+              return const AplazoLoader();
             }
           }),
         ),

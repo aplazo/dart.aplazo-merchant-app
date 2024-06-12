@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               buttonType: ButtonType.secondary),
                           onPressed: () {
                             context.materialPushAndRemoveUntil(
-                                screen: SimpleRegisterScreen());
+                                screen: const SimpleRegisterScreen());
                           })
                     ],
                   ),
@@ -145,7 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
           },
           listener: (context, state) {
             if (state is UserLogged) {
-              context.materialPushAndRemoveUntil(screen: MainDashboardScreen());
+              context.materialPushAndRemoveUntil(
+                  screen: const MainDashboardScreen());
             }
           },
         ));

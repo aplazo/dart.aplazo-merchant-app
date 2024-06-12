@@ -1,10 +1,14 @@
 import 'dart:convert';
-QrResponse qrResponseFromJson(String str) => QrResponse.fromJson(json.decode(str));
+
+QrResponse qrResponseFromJson(String str) =>
+    QrResponse.fromJson(json.decode(str));
 String qrResponseToJson(QrResponse data) => json.encode(data.toJson());
+
 class QrResponse {
   QrResponse({
-      this.content, 
-      this.base64,});
+    this.content,
+    this.base64,
+  });
 
   QrResponse.fromJson(dynamic json) {
     content = json['content'];
@@ -19,5 +23,4 @@ class QrResponse {
     map['base64'] = base64;
     return map;
   }
-
 }

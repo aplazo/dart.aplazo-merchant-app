@@ -1,14 +1,19 @@
 import 'dart:convert';
-LoginResponse loginResponseFromJson(String str) => LoginResponse.fromJson(json.decode(str));
+
+LoginResponse loginResponseFromJson(String str) =>
+    LoginResponse.fromJson(json.decode(str));
 String loginResponseToJson(LoginResponse data) => json.encode(data.toJson());
+
 class LoginResponse {
   LoginResponse({
-      this.content, 
-      this.error, 
-      this.code,});
+    this.content,
+    this.error,
+    this.code,
+  });
 
   LoginResponse.fromJson(dynamic json) {
-    content = json['content'] != null ? Content.fromJson(json['content']) : null;
+    content =
+        json['content'] != null ? Content.fromJson(json['content']) : null;
     error = json['error'];
     code = json['code'];
   }
@@ -25,14 +30,15 @@ class LoginResponse {
     map['code'] = code;
     return map;
   }
-
 }
 
 Content contentFromJson(String str) => Content.fromJson(json.decode(str));
 String contentToJson(Content data) => json.encode(data.toJson());
+
 class Content {
   Content({
-      this.token,});
+    this.token,
+  });
 
   Content.fromJson(dynamic json) {
     token = json['token'];
@@ -44,5 +50,4 @@ class Content {
     map['token'] = token;
     return map;
   }
-
 }

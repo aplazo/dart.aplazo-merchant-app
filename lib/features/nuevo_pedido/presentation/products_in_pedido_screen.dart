@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_posui_pocket/core/extensiones/build_extensions.dart';
 import 'package:flutter_posui_pocket/features/nuevo_pedido/bloc/products/products_in_pedido_bloc.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/model/ProductModel.dart';
+import 'package:flutter_posui_pocket/features/nuevo_pedido/model/product_model.dart';
 import 'package:flutter_posui_pocket/features/nuevo_pedido/presentation/success_pedido_screen.dart';
 import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
 import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
@@ -20,7 +20,6 @@ class ProductsInPedidoScreen extends StatefulWidget {
 }
 
 class _ProductsInPedidoScreenState extends State<ProductsInPedidoScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,20 +27,19 @@ class _ProductsInPedidoScreenState extends State<ProductsInPedidoScreen> {
           providers: [BlocProvider(create: (_) => ProductsInPedidoBloc())],
           child: BlocConsumer<ProductsInPedidoBloc, ProductsInPedidoState>(
               builder: (context, state) {
-                if (state is HasProductInCart) {
-                  return ordersList(
-                      state.listProducts, state.totalQuantity.toInt(), context);
-                } else if (state is ProductsInPedidoInitial) {
-                  return emptyState(context);
-                } else {
-                  return AplazoLoader();
-                }
-              },
-              listener: (context, state) {
-                if (state is MoveToSuccessPedido) {
-                  context.materialPush(screen: SuccessPedidoScreen());
-                }
-              })),
+            if (state is HasProductInCart) {
+              return ordersList(
+                  state.listProducts, state.totalQuantity.toInt(), context);
+            } else if (state is ProductsInPedidoInitial) {
+              return emptyState(context);
+            } else {
+              return const AplazoLoader();
+            }
+          }, listener: (context, state) {
+            if (state is MoveToSuccessPedido) {
+              context.materialPush(screen: const SuccessPedidoScreen());
+            }
+          })),
       appBar: AplazoNavbar(
         navbarProps: NavbarProps(title: 'Pedido nuevo'),
       ),
@@ -85,7 +83,7 @@ class _ProductsInPedidoScreenState extends State<ProductsInPedidoScreen> {
                       const Spacer(),
                       AplazoText(
                           textProps: TextProps(
-                              text: '\$${totalToPayment}',
+                              text: '\$$totalToPayment',
                               type: TextType.headlineSize12Weight400)),
                     ],
                   ),
@@ -284,16 +282,14 @@ class _ProductsInPedidoScreenState extends State<ProductsInPedidoScreen> {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 children: [
                   Row(
                     children: [
                       const Spacer(),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: IconButton(
                             onPressed: () {
                               context.back();

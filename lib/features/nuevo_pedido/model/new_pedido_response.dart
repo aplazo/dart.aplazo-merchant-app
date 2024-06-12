@@ -1,21 +1,26 @@
 import 'dart:convert';
-NewPedidoResponse newPedidoResponseFromJson(String str) => NewPedidoResponse.fromJson(json.decode(str));
-String newPedidoResponseToJson(NewPedidoResponse data) => json.encode(data.toJson());
+
+NewPedidoResponse newPedidoResponseFromJson(String str) =>
+    NewPedidoResponse.fromJson(json.decode(str));
+String newPedidoResponseToJson(NewPedidoResponse data) =>
+    json.encode(data.toJson());
+
 class NewPedidoResponse {
   NewPedidoResponse({
-      this.id, 
-      this.createdAt, 
-      this.updatedAt, 
-      this.deletedAt, 
-      this.date, 
-      this.status, 
-      this.price, 
-      this.url, 
-      this.loanId, 
-      this.merchantId, 
-      this.products, 
-      this.branchId, 
-      this.sellsAgentId,});
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.date,
+    this.status,
+    this.price,
+    this.url,
+    this.loanId,
+    this.merchantId,
+    this.products,
+    this.branchId,
+    this.sellsAgentId,
+  });
 
   NewPedidoResponse.fromJson(dynamic json) {
     id = json['id'];
@@ -70,24 +75,25 @@ class NewPedidoResponse {
     map['sellsAgentId'] = sellsAgentId;
     return map;
   }
-
 }
 
 Products productsFromJson(String str) => Products.fromJson(json.decode(str));
 String productsToJson(Products data) => json.encode(data.toJson());
+
 class Products {
   Products({
-      this.id, 
-      this.createdAt, 
-      this.updatedAt, 
-      this.deletedAt, 
-      this.quantity, 
-      this.description, 
-      this.imageUrl, 
-      this.price, 
-      this.title, 
-      this.externalId, 
-      this.merchantPosOrderId,});
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.quantity,
+    this.description,
+    this.imageUrl,
+    this.price,
+    this.title,
+    this.externalId,
+    this.merchantPosOrderId,
+  });
 
   Products.fromJson(dynamic json) {
     id = json['id'];
@@ -129,5 +135,4 @@ class Products {
     map['merchantPosOrderId'] = merchantPosOrderId;
     return map;
   }
-
 }

@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_posui_pocket/core/preferences_keys.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/model/NewPedidoResponse.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/model/NuevoPedidoRequest.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/model/QRResponse.dart';
+import 'package:flutter_posui_pocket/features/nuevo_pedido/model/new_pedido_response.dart';
+import 'package:flutter_posui_pocket/features/nuevo_pedido/model/nuevo_pedido_request.dart';
+import 'package:flutter_posui_pocket/features/nuevo_pedido/model/qr_response.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
-import '../model/ProductModel.dart';
+import '../model/product_model.dart';
 
 abstract class NuevoPedidoRepository {
   Future<NewPedidoResponse> addNewPedido(
@@ -61,7 +61,7 @@ class NuevoPedidoRepositoryImpl extends NuevoPedidoRepository {
 
     return await client
         .get(
-          'https://pos.aplazo.net/api/orders/qr-image?loanId=${loanId}',
+          'https://pos.aplazo.net/api/orders/qr-image?loanId=$loanId',
           options: Options(headers: {
             'Authorization': '${prefs.getString(PreferencesKeys.tokenKey)}',
             'Origin': 'https://posui.aplazo.net',

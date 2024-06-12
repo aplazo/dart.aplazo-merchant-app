@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_posui_pocket/core/preferences_keys.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/model/ProductModel.dart';
+import 'package:flutter_posui_pocket/features/nuevo_pedido/model/product_model.dart';
 import 'package:flutter_posui_pocket/features/nuevo_pedido/repository/nuevo_pedido_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,8 +1,7 @@
-import 'package:flutter_posui_pocket/ui/components/loaders/aplazo_splash.dart';
-import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
-import 'package:flutter_posui_pocket/ui/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_posui_pocket/ui/components/loaders/aplazo_splash.dart';
+import 'package:flutter_posui_pocket/ui/theme/theme_config.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

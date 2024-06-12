@@ -23,6 +23,7 @@ class SuccessPedidoScreen extends StatefulWidget {
 class _SuccessPedidoScreenState extends State<SuccessPedidoScreen> {
   @override
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     return WillPopScope(
         child: MultiProvider(
           providers: [BlocProvider(create: (_) => GetQrBloc())],

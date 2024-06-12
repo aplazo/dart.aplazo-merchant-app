@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_posui_pocket/features/login/models/LoginResponse.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 abstract class LoginRepository {

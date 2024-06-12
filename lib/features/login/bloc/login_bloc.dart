@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_posui_pocket/core/preferences_keys.dart';
 import 'package:flutter_posui_pocket/features/login/repository/login_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -71,6 +71,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/logo/
     - assets/lotties/
     - assets/gifs/
     - rsa_keys/

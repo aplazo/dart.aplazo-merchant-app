@@ -208,16 +208,24 @@ class SimpleRegisterView extends StatelessWidget {
                     buttonProps: ButtonProps(
                         text: 'Continuar', buttonType: ButtonType.primary),
                     onPressed: () {
-                      BlocProvider.of<RegisterBloc>(context).add(
-                          MerchantRegisterEvent(
-                              bussinessNameController.text,
-                              industryController.text,
-                              rfcController.text,
-                              phoneController.text,
-                              emailController.text,
-                              clabeController.text));
-                      context.materialPushAndRemoveUntil(
-                          screen: const LoginScreen());
+                      var allFieldsFilled = emailController.text.isNotEmpty &&
+                          bussinessNameController.text.isNotEmpty &&
+                          rfcController.text.isNotEmpty &&
+                          industryController.text.isNotEmpty &&
+                          phoneController.text.isNotEmpty &&
+                          clabeController.text.isNotEmpty;
+                      if (allFieldsFilled) {
+                        BlocProvider.of<RegisterBloc>(context).add(
+                            MerchantRegisterEvent(
+                                bussinessNameController.text,
+                                industryController.text,
+                                rfcController.text,
+                                phoneController.text,
+                                emailController.text,
+                                clabeController.text));
+                        context.materialPushAndRemoveUntil(
+                            screen: const LoginScreen());
+                      }
                     }),
               ],
             ),

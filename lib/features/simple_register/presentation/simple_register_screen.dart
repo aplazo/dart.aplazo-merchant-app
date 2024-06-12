@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_posui_pocket/core/extensiones/build_extensions.dart';
-import 'package:flutter_posui_pocket/features/simple_register/presentation/password_screen.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
-import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
 import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
+import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
+import 'package:flutter_posui_pocket/features/simple_register/bloc/register_bloc.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 class SimpleRegisterScreen extends StatefulWidget {
   const SimpleRegisterScreen({super.key});
@@ -17,6 +20,43 @@ class SimpleRegisterScreen extends StatefulWidget {
 class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController bussinessNameController = TextEditingController();
+  TextEditingController rfcController = TextEditingController();
+  TextEditingController industryController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController clabeController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+        create: (context) => RegisterBloc(),
+        child: SimpleRegisterView(
+            bussinessNameController: bussinessNameController,
+            industryController: industryController,
+            rfcController: rfcController,
+            phoneController: phoneController,
+            clabeController: clabeController,
+            emailController: emailController));
+  }
+}
+
+class SimpleRegisterView extends StatelessWidget {
+  const SimpleRegisterView({
+    super.key,
+    required this.bussinessNameController,
+    required this.industryController,
+    required this.rfcController,
+    required this.phoneController,
+    required this.clabeController,
+    required this.emailController,
+  });
+
+  final TextEditingController bussinessNameController;
+  final TextEditingController industryController;
+  final TextEditingController rfcController;
+  final TextEditingController phoneController;
+  final TextEditingController clabeController;
+  final TextEditingController emailController;
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +93,11 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                       children: [
                         AplazoTextField(
                             textFieldProps: TextFieldProps(
-                                hintText: 'Nombre',
-                                label: 'Ingresa tu nombre',
-                                textFieldType: TextFieldType.email),
+                                hintText: 'Nombre del comercio',
+                                label: 'Ingresa el nombre tu comercio',
+                                textFieldType: TextFieldType.normal),
                             onChanged: (text) {},
-                            controller: emailController),
+                            controller: bussinessNameController),
                         const SizedBox(
                           height: 8,
                         ),
@@ -72,11 +112,11 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                       children: [
                         AplazoTextField(
                             textFieldProps: TextFieldProps(
-                                hintText: 'Razon social',
-                                label: 'Ingresa tu razon social',
-                                textFieldType: TextFieldType.email),
+                                hintText: 'Giro del negocio',
+                                label: 'Ingresa el giro de tu negocio',
+                                textFieldType: TextFieldType.normal),
                             onChanged: (text) {},
-                            controller: emailController),
+                            controller: industryController),
                         const SizedBox(
                           height: 8,
                         ),
@@ -93,9 +133,9 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                             textFieldProps: TextFieldProps(
                                 hintText: 'RFC',
                                 label: 'Ingresa tu RFC',
-                                textFieldType: TextFieldType.email),
+                                textFieldType: TextFieldType.normal),
                             onChanged: (text) {},
-                            controller: emailController),
+                            controller: rfcController),
                         const SizedBox(
                           height: 8,
                         ),
@@ -112,9 +152,28 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                             textFieldProps: TextFieldProps(
                                 hintText: 'Telefono',
                                 label: 'Ingresa tu telefono',
-                                textFieldType: TextFieldType.email),
+                                textFieldType: TextFieldType.phone),
                             onChanged: (text) {},
-                            controller: emailController),
+                            controller: phoneController),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                      ],
+                    )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Column(
+                      children: [
+                        AplazoTextField(
+                            textFieldProps: TextFieldProps(
+                                hintText: 'Clabe interbancaria',
+                                label: 'Ingresa tu clabe',
+                                textFieldType: TextFieldType.number),
+                            onChanged: (text) {},
+                            controller: clabeController),
                         const SizedBox(
                           height: 8,
                         ),
@@ -132,7 +191,9 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                                 hintText: 'Correo',
                                 label: 'Ingresa tu correo',
                                 textFieldType: TextFieldType.email),
-                            onChanged: (text) {},
+                            onChanged: (text) {
+                              print("asd");
+                            },
                             controller: emailController),
                         const SizedBox(
                           height: 8,
@@ -145,8 +206,14 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
                     buttonProps: ButtonProps(
                         text: 'Continuar', buttonType: ButtonType.primary),
                     onPressed: () {
-                      context.materialPushAndRemoveUntil(
-                          screen: PasswordScreen());
+                      BlocProvider.of<RegisterBloc>(context).add(
+                          MerchantRegisterEvent(
+                              bussinessNameController.text,
+                              industryController.text,
+                              rfcController.text,
+                              phoneController.text,
+                              emailController.text,
+                              clabeController.text));
                     }),
               ],
             ),

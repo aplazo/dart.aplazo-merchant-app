@@ -78,6 +78,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logo/
+    - assets/images/alerts/
+    - assets/images/commons/
+    - assets/images/connectivity/
     - assets/lotties/
     - assets/gifs/
     - rsa_keys/

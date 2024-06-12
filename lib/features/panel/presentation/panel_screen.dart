@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_posui_pocket/core/extensiones/build_extensions.dart';
-import 'package:flutter_posui_pocket/features/nuevo_pedido/presentation/add_phone_number_screen.dart';
-import 'package:flutter_posui_pocket/ui/components/cards/aplazo_sales_info_card.dart';
-import 'package:flutter_posui_pocket/ui/components/navigations/aplazo_navbar.dart';
-import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
+import 'package:flutter_posui_pocket/features/orders/presentation/empty/orders_empty_screen.dart';
 import 'package:flutter_posui_pocket/ui/components/cards/aplazo_container_card.dart';
+import 'package:flutter_posui_pocket/ui/components/cards/aplazo_sales_info_card.dart';
+import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_dropdown.dart';
+import 'package:flutter_posui_pocket/ui/components/navigations/aplazo_navbar.dart';
 
 class PanelScreen extends StatelessWidget {
   const PanelScreen({super.key});
@@ -49,7 +48,15 @@ class PanelBody extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                ], color: const Color(0xFF00E6F5))
+                ], color: const Color(0xFF00E6F5)),
+                AplazoDropDown(
+                    optionList: [],
+                    dropdownValue: 'Todas',
+                    label: 'Estatus de orden',
+                    onChange: (String? value) {
+                      print(value);
+                    }),
+                const OrdersEmptyScreen()
               ]),
             ),
           )

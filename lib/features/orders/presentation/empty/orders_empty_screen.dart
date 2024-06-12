@@ -18,14 +18,13 @@ class OrdersEmptyScreen extends StatelessWidget {
                 textProps: TextProps(
                     paddingHorizontal: 0,
                     paddingVertical: 8,
-                    text: "No hay compras para mostrar",
+                    text: "No hay ventas para mostrar",
                     type: TextType.head)),
             AplazoText(
                 textProps: TextProps(
                     paddingHorizontal: 8,
                     paddingVertical: 8,
-                    text:
-                        "Aún no has realizado ninguna compra. Explora nuestras tiendas y comienza a utilizar tu crédito Aplazo.",
+                    text: "Aún no has realizado ninguna venta.",
                     type: TextType.lightText))
           ],
         ),

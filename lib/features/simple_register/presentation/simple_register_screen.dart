@@ -5,6 +5,7 @@ import 'package:flutter_posui_pocket/features/login/presentation/logins_screen.d
 import 'package:flutter_posui_pocket/features/simple_register/bloc/register_bloc.dart';
 import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
 import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
+import 'package:flutter_posui_pocket/ui/components/navigations/aplazo_navbar.dart';
 import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
 
 class SimpleRegisterScreen extends StatefulWidget {
@@ -227,6 +228,8 @@ class SimpleRegisterView extends StatelessWidget {
           )),
         ],
       ),
+      appBar:
+          AplazoNavbar(navbarProps: NavbarProps(title: 'Registro Merchants')),
     );
   }
 }

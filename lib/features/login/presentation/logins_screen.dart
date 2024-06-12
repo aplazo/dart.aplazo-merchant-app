@@ -132,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               text: 'Crea tu cuenta comercial',
                               buttonType: ButtonType.secondary),
                           onPressed: () {
-                            context.materialPushAndRemoveUntil(
+                            context.materialPush(
                                 screen: const SimpleRegisterScreen());
                           })
                     ],

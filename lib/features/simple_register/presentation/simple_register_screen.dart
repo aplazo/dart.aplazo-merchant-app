@@ -68,22 +68,6 @@ class SimpleRegisterView extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 80,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: AplazoText(
-                          textProps: TextProps(
-                              text: 'Queremos conocerte!',
-                              type: TextType.headlineSize24Weight700,
-                              multiAligment: TextAlign.start,
-                              aligment: Alignment.centerLeft,
-                              paddingHorizontal: 16)),
-                    ),
-                  ],
-                ),
-                const SizedBox(
                   height: 16,
                 ),
                 Row(
@@ -229,7 +213,7 @@ class SimpleRegisterView extends StatelessWidget {
         ],
       ),
       appBar:
-          AplazoNavbar(navbarProps: NavbarProps(title: 'Registro Merchants')),
+          AplazoNavbar(navbarProps: NavbarProps(title: 'Queremos conocerte!')),
     );
   }
 }

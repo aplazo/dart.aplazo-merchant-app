@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_posui_pocket/core/extensiones/build_extensions.dart';
+import 'package:flutter_posui_pocket/features/login/presentation/logins_screen.dart';
 import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
 import 'package:flutter_posui_pocket/ui/components/texts/aplazo_text.dart';
 import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
@@ -214,6 +216,8 @@ class SimpleRegisterView extends StatelessWidget {
                               phoneController.text,
                               emailController.text,
                               clabeController.text));
+                      context.materialPushAndRemoveUntil(
+                          screen: const LoginScreen());
                     }),
               ],
             ),

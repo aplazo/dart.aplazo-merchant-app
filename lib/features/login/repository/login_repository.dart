@@ -20,9 +20,6 @@ class LoginRepositoryImpl extends LoginRepository {
   @override
   Future<String> login(String username, String password) async {
     try {
-      print(username);
-      print(password);
-
       return await client.post('https://api.aplazo.net/login', data: {
         'login': username,
         'password': password

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_posui_pocket/core/extensiones/build_extensions.dart';
 import 'package:flutter_posui_pocket/features/login/bloc/login_bloc.dart';
 import 'package:flutter_posui_pocket/features/main_dashboard/presentation/main_dashboard_screen.dart';
+import 'package:flutter_posui_pocket/features/simple_register/presentation/simple_register_screen.dart';
 import 'package:flutter_posui_pocket/ui/components/buttons/aplazo_button.dart';
 import 'package:flutter_posui_pocket/ui/components/inputs/aplazo_textfield.dart';
 import 'package:flutter_posui_pocket/ui/components/loaders/aplazo_loader.dart';
@@ -130,7 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           buttonProps: ButtonProps(
                               text: 'Crea tu cuenta comercial',
                               buttonType: ButtonType.secondary),
-                          onPressed: () {})
+                          onPressed: () {
+                            context.materialPushAndRemoveUntil(
+                                screen: SimpleRegisterScreen());
+                          })
                     ],
                   ),
                 ),

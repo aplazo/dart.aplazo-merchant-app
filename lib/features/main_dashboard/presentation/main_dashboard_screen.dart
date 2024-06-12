@@ -92,7 +92,7 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
                                 paddingHorizontal: 16)),
                         AplazoText(
                             textProps: TextProps(
-                                text: '\$32,123,200.00',
+                                text: '\$2,123.00',
                                 type: TextType.headlineSize24Weight700,
                                 multiAligment: TextAlign.start,
                                 aligment: Alignment.centerLeft,
@@ -140,7 +140,7 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
   }
 
   void handleShortcut(Shortcut shortcut, BuildContext context) {
-    if (shortcut.moveTo == 'panel') {
+    if (shortcut.moveTo == 'ordenes') {
       context.materialPush(screen: const PanelScreen());
     }
 

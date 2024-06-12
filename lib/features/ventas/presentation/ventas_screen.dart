@@ -32,10 +32,16 @@ class VentasBody extends StatelessWidget {
               child: Column(
                 children: [
                   const AplazoAgentProgressCard(),
-                  const AplazoTextNumberTextCard(text1: 'Realizas en promedio',
-                      number: '50', text2: 'Ventas al día cobrando con Aplazo', color: Color(0xFFB5ACF2)),
-                  const AplazoTextNumberTextCard(text1: 'Has realizado',
-                      number: '750', text2: 'Ventas cobrando con Aplazo', color: Color(0xFFF0AA6A)),
+                  const AplazoTextNumberTextCard(
+                      text1: 'Realizas en promedio',
+                      number: '50',
+                      text2: 'Ventas al día cobrando con Aplazo',
+                      color: Color(0xFFB5ACF2)),
+                  const AplazoTextNumberTextCard(
+                      text1: 'Has realizado',
+                      number: '750',
+                      text2: 'Ventas cobrando con Aplazo',
+                      color: Color(0xFFF0AA6A)),
                   AplazoContainerCard(childrenContent: [
                     AplazoText(
                         textProps: TextProps(
@@ -46,7 +52,7 @@ class VentasBody extends StatelessWidget {
                     ),
                     Center(
                       child: Image.asset(
-                        'assets/images/img_lavadora.png',
+                        'assets/images/logo/logo_splash_2.png',
                         // Reemplaza con la ruta de tu imagen
                         width: 175.0,
                         height: 116.0,
@@ -58,7 +64,8 @@ class VentasBody extends StatelessWidget {
                     ),
                     AplazoText(
                         textProps: TextProps(
-                            text: 'Vende a 10 clientes entre el 20 de enero y el 10 de febrero de 2024 y ¡gánate una lavadora LG!',
+                            text:
+                                'Vende a 10 clientes entre el 20 de enero y el 10 de febrero de 2024 y ¡gánate una lavadora LG!',
                             type: TextType.headlineSize14Weight400Black)),
                   ], color: const Color(0xFF00E6F5)),
                 ],

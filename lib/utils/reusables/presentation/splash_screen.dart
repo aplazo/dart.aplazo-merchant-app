@@ -51,6 +51,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Center(
+            child: AplazoSplash(onFinishedAnimation: () {}),
+          ),
+          Center(
             child: Image.asset(
               "assets/images/logo/logo_splash_2.png",
               width: 50,

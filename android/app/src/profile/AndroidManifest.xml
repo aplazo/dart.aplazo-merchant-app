@@ -4,11 +4,5 @@
          the Flutter tool needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->
-
-    <application
-    android:label="Aplazo Merchant"
-    android:name=".MyApplication"
-    android:icon="@mipmap/ic_launcher"
-    />
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

@@ -46,11 +46,13 @@ class ProductsInPedidoBloc
 
   checkProductList() {
     if (listProduct.isEmpty) {
+      // ignore: invalid_use_of_visible_for_testing_member
       emit(NotHasProduct());
     } else {
       var totalQuantity = listProduct.fold(
           0, (sum, item) => sum + ((item.price ?? 0) * (item.count ?? 1)));
       totalPrice = totalQuantity;
+      // ignore: invalid_use_of_visible_for_testing_member
       emit(HasProductInCart(
           listProducts: listProduct, totalQuantity: totalQuantity.toDouble()));
     }

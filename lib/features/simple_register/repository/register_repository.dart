@@ -53,6 +53,13 @@ class RegisterRepositoryImpl extends RegisterRepository {
         ),
       );
 
+      Response response3 = await client.post(
+        'https://shield-back.aplazo.net/api/v1/merchant/micro/' +
+            response1.data['merchant_id'] +
+            '/password',
+        data: {"password": "Aplazo@123", "login": email},
+      );
+
       // Manejar la respuesta de la segunda petición
       return response1.data["merchant_id"];
     } on DioException {

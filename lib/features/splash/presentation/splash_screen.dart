@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
           AplazoText(
               textProps: TextProps(
                   type: TextType.headlineSize16Weight700,
-                  text: 'POSUI\nPocket')),
+                  text: 'POSUI\nMobile')),
           const AplazoLoaderView()
         ],
       )),

@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           textFieldProps: TextFieldProps(
                               hintText: 'Usuario',
                               label: 'Ingresa tu usuario',
+                              maxLenght: 140,
                               textFieldType: TextFieldType.email),
                           onChanged: (text) {
                             BlocProvider.of<LoginBloc>(context);

@@ -173,6 +173,7 @@ class SimpleRegisterView extends StatelessWidget {
                             textFieldProps: TextFieldProps(
                                 hintText: 'Correo',
                                 label: 'Ingresa tu correo',
+                                maxLenght: 120,
                                 textFieldType: TextFieldType.email),
                             onChanged: (text) {},
                             controller: emailController),
